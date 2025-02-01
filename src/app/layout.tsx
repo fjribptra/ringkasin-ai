@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import HTML from "@/components/HTML";
 
 
 const inter = Inter({
@@ -19,12 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <HTML>
       <body
         className={`${inter.className} antialiased`}
       >
         {children}
       </body>
-    </html>
+      </HTML>
   );
 }
