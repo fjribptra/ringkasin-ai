@@ -35,7 +35,7 @@ export default function Home() {
           <DescriptionMode mode={mode}/>
           <ModeNavigation mode={mode} setMode={setMode}/>
           <InputMode mode={mode} setUserInput={setUserInput}/>
-          {result && !isLoading && <div className="w-1/2 p-5 rounded-lg">
+          {result && !isLoading && <div className="w-full xl:w-1/2 p-5 rounded-lg">
             {result}
           </div>}
           {isLoading && <Loader/>}
