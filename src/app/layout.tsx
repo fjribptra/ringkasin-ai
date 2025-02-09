@@ -13,8 +13,8 @@ const montserrat = Montserrat({
 
 
 export const metadata: Metadata = {
-  title: "Ringkasin AI - Ringkas materi dengan bahasa yang gampang buat dipahami",
-  description: "Ringkas materi dengan bahasa yang gampang buat dipahami",
+  title: "Ringkasin AI - Summarize article in language that is easy to understand",
+  description: "Summarize article in language that is easy to understand",
 };
 
 export default function RootLayout({
