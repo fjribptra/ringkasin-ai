@@ -4,7 +4,9 @@ import GenerateButton from "@/components/GenerateButton";
 import InputMode from "@/components/InputMode";
 import Loader from "@/components/Loader";
 import ModeNavigation from "@/components/ModeNavigation";
+import SafeExplanation from "@/components/SafeExplanation";
 import { Mode } from "@/definitions";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -21,24 +23,25 @@ export default function Home() {
       <nav className="sticky top-0 right-0 left-0 flex justify-between items-center p-6 border-b-2 border-secondary bg-gradient-to-r from-secondary to-gray-400 text-white">
         <div className="flex items-center gap-3 text-2xl">
           <div className="bg-gradient-to-r from-secondary to-gray-800 bg-clip-text">
-            <FaBoltLightning/>
+            <Image className="w-[35px]" src="/logo.png" width={150} height={150} alt="Ringkasin AI Logo" />
           </div>
           <h1 className="font-bold ">Ringkasin AI</h1>
         </div>
         <div className="flex gap-5">
-            <Link className="text-2xl" href="https://github.com/fjribptra" target="_blank">
+            <Link className="text-2xl" href="https://github.com/fjribptra/ringkasin-ai" target="_blank">
             <FaGithub/>
             </Link>
         </div>
       </nav>
       <section className="bg-gradient-to-b from-gray-800 via-black to-gray-800 text-white p-3">
         <div className="container mx-auto min-h-screen flex flex-col items-center py-20 gap-7">
-          <h2 className="text-5xl md:text-7xl xl:text-8xl text-white font-bold bg-gradient-to-r from-blue-500 to-green-600 py-4 bg-clip-text text-transparent">Ringkasin AI</h2>
+        <Image className="w-[150px]" src="/logo.png" width={150} height={150} alt="Ringkasin AI Logo" />
+          {/* <h2 className="text-5xl md:text-7xl xl:text-8xl text-white font-bold bg-gradient-to-r from-blue-500 to-green-600 py-4 bg-clip-text text-transparent">Ringkasin AI</h2> */}
           <DescriptionMode mode={mode}/>
           <ModeNavigation mode={mode} setMode={setMode}/>
           <InputMode mode={mode} setUserInput={setUserInput}/>
           {result && !isLoading && <div className="w-full xl:w-1/2 p-5 rounded-lg">
-            {result}
+              <SafeExplanation text={result}/>
           </div>}
           {isLoading && <Loader/>}
          <GenerateButton userInput={userInput} setResult={setResult} setIsLoading={setIsLoading}/>
